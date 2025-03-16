@@ -33,8 +33,9 @@ class PygameInterface:
         self.cell_size = 65
         self.border = 65
         # model
-        self.mlp_model = joblib.load('D:/Dev/Project/THE_FINAL_MINESWEEPER/models/mlp_model.pkl')
-        self.dt_model = joblib.load('D:/Dev/Project/THE_FINAL_MINESWEEPER/models/dt_model.pkl')
+        
+        self.mlp_model = joblib.load('D:/Dev/Project/AI/THE_FINAL_MINESWEEPER/models/mlp_model.pkl')
+        self.dt_model = joblib.load('D:/Dev/Project/AI/THE_FINAL_MINESWEEPER/models/dt_model.pkl')
         
     
     def init(self):
@@ -178,9 +179,9 @@ class PygameInterface:
     
     def run(self):
         running = True
-        self.img_flag = pygame.image.load('D:/Dev/Project/THE_FINAL_MINESWEEPER/img/flag.png')
+        self.img_flag = pygame.image.load('D:/Dev/Project/AI/THE_FINAL_MINESWEEPER/img/flag.png')
         self.img_flag = pygame.transform.scale(self.img_flag, (self.cell_size, self.cell_size))
-        self.img_mine = pygame.image.load('D:/Dev/Project/THE_FINAL_MINESWEEPER/img/mine.png')
+        self.img_mine = pygame.image.load('D:/Dev/Project/AI/THE_FINAL_MINESWEEPER/img/mine.png')
         self.img_mine = pygame.transform.scale(self.img_mine, (self.cell_size, self.cell_size))
         while running:
             self.mouse_x, self.mouse_y = pygame.mouse.get_pos()
