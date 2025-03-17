@@ -12,4 +12,4 @@
   - But with the help of the `Heuristic`, the **win rate** of Easy mode is approximately 90% for 100 games, over 73% for Medium mode.
  
 - Run `play.py` file to let the model plays automatically on [MineSweeper Online](https://minesweeperonline.com/), set the `number_of_time_playing` in `play()` function.
-- Run `display.py` file to play locally with pygame, you can see what the probability of `MLP` and `Random Forest` predict along with `Heuristic`.
+- Run `display.py` file to play locally with pygame, you can see the probability of `MLP` and `Random Forest` predict along with `Heuristic`.
