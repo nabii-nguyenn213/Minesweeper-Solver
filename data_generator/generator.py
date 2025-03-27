@@ -4,8 +4,8 @@ from tqdm import tqdm
 import pandas as pd
 import numpy as np
 
-path_data = 'D:/Dev/Project/THE_FINAL_MINESWEEPER/dataset/data.csv'
-path_label = 'D:/Dev/Project/THE_FINAL_MINESWEEPER/dataset/label.csv'
+path_data = '../dataset/data.csv'
+path_label = '../dataset/label.csv'
 
 def generate_data(number_of_board):
     data = []
