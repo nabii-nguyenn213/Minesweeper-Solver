@@ -77,7 +77,7 @@ def optimal_move(current_board, mlp, rf):
                 feature = features[r*len(current_board)+c].reshape((1, 27))
                 proba_mlp = mlp.predict_proba(feature)[:, 1]
                 proba_rf = rf.predict_proba(feature)[:, 1]
-                mean = proba_mlp + proba_rf / 2
+                mean = (proba_mlp + proba_rf )/ 2
                 if mean < min_probability:
                     min_probability = mean
                     min_index = (r, c)
@@ -93,23 +93,23 @@ def play():
     mlp = joblib.load('models/mlp_model.pkl')
     rf = joblib.load('models/dt_model.pkl')
     wins = 0
-    time.sleep(2)
+    time.sleep(1)
     for _ in range(number_of_time_playing):
         time.sleep(1)
         game_over_ = game_over()
-        number_of_heuristic_solve, number_of_models_solve = 0, 0
+        # number_of_heuristic_solve, number_of_models_solve = 0, 0
         while game_over_ == 0:
             time.sleep(1)
             current_board = get_current_board()
             safes, mines = heuristic_solve(current_board=current_board)
             if safes == [] and mines == []:
-                number_of_heuristic_solve += 1
+                # number_of_heuristic_solve += 1
                 r, c = optimal_move(current_board, mlp, rf)
                 cell_id = f'//*[@id="{r+1}_{c+1}"]'
                 cell = driver.find_element(By.XPATH, cell_id)
                 cell.click()
             else:
-                number_of_models_solve += 1
+                # number_of_models_solve += 1
                 if safes:
                     for r, c in safes:
                         cell_id = f'//*[@id="{r+1}_{c+1}"]'
@@ -133,8 +133,8 @@ def play():
         else:
             print('Lose')
         print()
-        print("Heuristic solve :", number_of_heuristic_solve)
-        print("Models solve :", number_of_models_solve)
+        # print("Heuristic solve :", number_of_heuristic_solve)
+        # print("Models solve :", number_of_models_solve)
     
     win_rate = (wins / number_of_time_playing) * 100
     
