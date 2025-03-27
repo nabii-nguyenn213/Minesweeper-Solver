@@ -1,5 +1,5 @@
 import numpy as np
-import random # for generate mines 
+import random 
 ### Define Constants
 
 MINE_CELL = -2

@@ -7,9 +7,9 @@
   - The `MLP` and `Random Forest` is used to solve the certain cases when the `Heuristic` cannot find the obvious cases.
 
 - Why we need `Heuristic`?
-  - `Heuristic` helps solve the early stage of the game. Minesweeper; however, is a game of chance in the early game.
+  - `Heuristic` helps solve the **early stage** of the game. Minesweeper; however, is a game of chance in the early game.
   - Removing the `Heuristic` leaves `MLP` and `Random Forest` with insufficient information to predict, making the **win rate** close to 0.
   - But with the help of the `Heuristic`, the **win rate** of Easy mode is approximately 90% for 100 games, over 73% for Medium mode.
  
 - Run `play.py` file to let the model plays automatically on [MineSweeper Online](https://minesweeperonline.com/), set the `number_of_time_playing` in `play()` function.
-- Run `display.py` file to play locally with pygame, you can see the probability of `MLP` and `Random Forest` predict along with `Heuristic`.
+- Run `display.py` file to play locally with **pygame**, you can see the probability of `MLP` and `Random Forest` predict along with `Heuristic`.
